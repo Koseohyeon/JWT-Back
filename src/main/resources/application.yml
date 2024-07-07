@@ -1,0 +1,55 @@
+####################################
+# ?? ? ???? ?? ??
+####################################
+server:
+  port: 8080                   # ?? ??
+
+spring:
+  application:
+    name: FDex     # ????? ??
+
+  devtools:
+    livereload:
+      enabled: true           # ?? ??? ??
+    restart:
+      enabled: true           # ?? ??? ??
+      preserve-session: true  # ?? ?? ??
+
+  thymeleaf:
+    cache: false              # ?? ??
+
+  security:
+    user:
+      password: 1             # ?????? ?? X
+  ####################################
+  # ?????? ??
+  ####################################
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/fdex?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: ksh1230*
+
+  ####################################
+  # JPA ??
+  ####################################
+  jpa:
+    open-in-view: true      #
+    hibernate:
+      ddl-auto: update      # create, update, ...
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy # ????? ???? ??? ??
+    show-sql: true          # SQL ?? ???
+    properties:
+      hibernate:
+        format_sql: true    # ?? ???? ???
+        default_batch_fetch_size: 1000  # ??? ??? ??? ? in ?? ?? ??
+    #database-platform: org.hibernate.dialect.MySQL8Dialect  # MySQL8 ?? ??
+  ####################################
+  # JWT
+  ####################################
+jwt:
+  secret: fZRQGPIdx/qsnsWM4iPpVMXLt+dYcfzlG3uRMdV+TZc
+  token:
+    access-expiration-time: 1800  # 30?
+    refresh-expiration-time: 604800  # 7?
