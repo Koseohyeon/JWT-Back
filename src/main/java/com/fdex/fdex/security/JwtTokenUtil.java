@@ -18,7 +18,7 @@ public class JwtTokenUtil implements Serializable {
     private static final long serialVersionUID = -2550185165626007488L;
 
     public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;// JWT 토큰 유효 시간 설정
-
+    //시크릿 키
     @Value("${jwt.secret}")
     private String secret; // 시크릿 키 설정
 
